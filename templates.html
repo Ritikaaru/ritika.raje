@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Templates &amp; Frameworks — Ritika Raje</title>
+<meta name="description" content="Practical delivery templates and operational excellence frameworks — the tools I actually use, free to take and use in your own work.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0B2630;
+    --ink-soft:#16323D;
+    --paper:#ECEEEC;
+    --card:#FFFFFF;
+    --signal:#D9902B;
+    --signal-deep:#B4741C;
+    --muted:#54666A;
+    --muted-light:#8EA0A0;
+    --line:rgba(11,38,48,0.14);
+    --line-light:rgba(255,255,255,0.16);
+    --display:"Space Grotesk",system-ui,sans-serif;
+    --body:"IBM Plex Sans",system-ui,sans-serif;
+    --mono:"IBM Plex Mono",ui-monospace,monospace;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+
+  body{
+    font-family:var(--body);
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+
+  .wrap{max-width:1120px;margin:0 auto;padding:0 32px;}
+
+  .measured-rule{
+    height:14px;
+    border-top:1px solid var(--line);
+    background-image:repeating-linear-gradient(to right,var(--line) 0,var(--line) 1px,transparent 1px,transparent 40px);
+    background-size:40px 7px;
+    background-repeat:repeat-x;
+  }
+
+  .eyebrow{
+    font-family:var(--mono);
+    font-size:12px;
+    font-weight:500;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    color:var(--signal-deep);
+  }
+
+  /* ============ HEADER ============ */
+  header.site{
+    position:sticky;top:0;z-index:50;
+    background:rgba(236,238,236,0.86);
+    backdrop-filter:saturate(1.2) blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:72px;}
+  .brand{display:flex;flex-direction:column;line-height:1.1;text-decoration:none;color:var(--ink);}
+  .brand .name{font-family:var(--display);font-weight:600;font-size:19px;letter-spacing:-0.01em;}
+  .brand .role{font-family:var(--mono);font-size:10.5px;letter-spacing:0.16em;text-transform:uppercase;color:var(--muted);margin-top:3px;}
+  nav.links{display:flex;align-items:center;gap:34px;}
+  nav.links a{font-size:15px;color:var(--ink);text-decoration:none;font-weight:500;transition:color .2s;}
+  nav.links a:hover{color:var(--signal-deep);}
+  nav.links a.active{color:var(--signal-deep);border-bottom:2px solid var(--signal);padding-bottom:2px;}
+  .btn{
+    font-family:var(--body);font-weight:600;font-size:15px;
+    padding:11px 20px;border-radius:2px;text-decoration:none;
+    display:inline-block;transition:transform .15s ease,background .2s,color .2s;cursor:pointer;border:none;
+  }
+  .btn-primary{background:var(--ink);color:#fff;}
+  .btn-primary:hover{background:var(--signal-deep);}
+  .btn-ghost{background:transparent;color:var(--ink);border:1px solid var(--ink);}
+  .btn-ghost:hover{background:var(--ink);color:#fff;}
+  .nav-cta{display:inline-block;}
+  .menu-toggle{display:none;background:none;border:none;cursor:pointer;font-family:var(--mono);font-size:13px;color:var(--ink);letter-spacing:0.1em;text-decoration:none;}
+
+  /* ============ HERO ============ */
+  .hero{padding:80px 0 56px;}
+  .hero .eyebrow{margin-bottom:24px;display:block;}
+  .hero h1{
+    font-family:var(--display);
+    font-weight:600;
+    font-size:clamp(34px,5.4vw,60px);
+    line-height:1.03;
+    letter-spacing:-0.025em;
+    max-width:16ch;
+  }
+  .hero h1 em{font-style:normal;color:var(--signal-deep);}
+  .hero .lede{
+    font-size:clamp(17px,2vw,20px);
+    color:var(--muted);
+    max-width:56ch;
+    margin-top:26px;
+  }
+  .hero .note{
+    font-family:var(--mono);
+    font-size:13px;
+    color:var(--muted-light);
+    margin-top:22px;
+    letter-spacing:0.02em;
+  }
+
+  /* ============ RESOURCES ============ */
+  .resources{padding:70px 0 84px;}
+  .res-grid{
+    display:grid;grid-template-columns:repeat(2,1fr);gap:1px;
+    background:var(--line);border:1px solid var(--line);
+  }
+  .res{
+    background:var(--card);
+    padding:32px 30px 30px;
+    display:flex;flex-direction:column;
+    transition:background .2s;
+  }
+  .res:hover{background:#fbfcfb;}
+  .res .cat{font-family:var(--mono);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--signal-deep);}
+  .res h3{font-family:var(--display);font-weight:600;font-size:22px;margin:16px 0 12px;letter-spacing:-0.01em;line-height:1.18;color:var(--ink);}
+  .res p{font-size:15px;color:var(--muted);line-height:1.6;flex-grow:1;}
+  .res .meta{display:flex;align-items:center;justify-content:space-between;margin-top:24px;padding-top:20px;border-top:1px solid var(--line);}
+  .res .fmt{font-family:var(--mono);font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted-light);}
+  .btn-dl{
+    font-family:var(--body);font-weight:600;font-size:14px;
+    padding:9px 16px;border-radius:2px;text-decoration:none;
+    background:var(--ink);color:#fff;transition:background .2s;
+  }
+  .btn-dl:hover{background:var(--signal-deep);}
+
+  /* ============ CTA BAND ============ */
+  .cta-band{background:var(--ink);color:#fff;padding:72px 0;}
+  .cta-band .eyebrow{color:var(--signal);display:block;margin-bottom:20px;}
+  .cta-band h2{font-family:var(--display);font-weight:600;font-size:clamp(28px,4vw,44px);letter-spacing:-0.02em;line-height:1.08;max-width:20ch;}
+  .cta-band p{color:var(--muted-light);font-size:17px;margin-top:18px;max-width:52ch;}
+  .cta-band .actions{margin-top:34px;display:flex;gap:14px;flex-wrap:wrap;}
+  .btn-signal{background:var(--signal);color:var(--ink);}
+  .btn-signal:hover{background:#fff;}
+  .btn-outline{background:transparent;color:#fff;border:1px solid rgba(255,255,255,0.5);}
+  .btn-outline:hover{border-color:#fff;background:rgba(255,255,255,0.08);}
+
+  /* ============ FOOTER ============ */
+  footer.site{background:var(--ink);color:var(--muted-light);padding:40px 0 48px;border-top:1px solid var(--line-light);}
+  .foot-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+  .foot-inner .fname{font-family:var(--display);color:#fff;font-weight:500;font-size:16px;}
+  .foot-inner .fmeta{font-family:var(--mono);font-size:12px;letter-spacing:0.08em;}
+
+  /* ============ REVEAL ============ */
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease;}
+  .reveal.in{opacity:1;transform:none;}
+
+  /* ============ RESPONSIVE ============ */
+  @media (max-width:860px){
+    .wrap{padding:0 22px;}
+    nav.links{display:none;}
+    .nav-cta{display:none;}
+    .menu-toggle{display:block;}
+    .res-grid{grid-template-columns:1fr;}
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto;}
+    .reveal{transition:none;opacity:1;transform:none;}
+    .btn,.res,.btn-dl{transition:none;}
+  }
+
+  a:focus-visible,.btn:focus-visible,.btn-dl:focus-visible,button:focus-visible{outline:2px solid var(--signal);outline-offset:3px;}
+</style>
+</head>
+<body id="top">
+
+<header class="site">
+  <div class="wrap nav-inner">
+    <a class="brand" href="index.html">
+      <span class="name">Ritika Raje</span>
+      <span class="role">Operational Excellence · Delivery</span>
+    </a>
+    <nav class="links">
+      <a href="index.html#work">Outcomes</a>
+      <a href="index.html#services">Services</a>
+      <a href="templates.html" class="active">Templates</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+    <a class="btn btn-primary nav-cta" href="index.html#contact">Start a conversation</a>
+    <a class="menu-toggle" href="index.html#contact">CONTACT →</a>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <span class="eyebrow reveal">Templates &amp; frameworks</span>
+      <h1 class="reveal">The tools I use, <em>free to take.</em></h1>
+      <p class="lede reveal">A working library of delivery templates and operational excellence frameworks — the same ones I reach for on real programmes. Take them, adapt them, use them in your own work. No sign-up, no catch.</p>
+      <p class="note reveal">// If they save you an afternoon, that's the point.</p>
+    </div>
+  </section>
+
+  <div class="measured-rule"></div>
+
+  <!-- RESOURCES -->
+  <section class="resources">
+    <div class="wrap">
+      <div class="res-grid">
+
+        <div class="res reveal">
+          <span class="cat">Programme Delivery</span>
+          <h3>RAID Log Template</h3>
+          <p>A clean, ready-to-use tracker for Risks, Assumptions, Issues, and Dependencies — structured so it stays useful instead of becoming a graveyard nobody opens.</p>
+          <div class="meta">
+            <span class="fmt">XLSX</span>
+            <a class="btn-dl" href="files/raid-log-template.xlsx" download>Download</a>
+          </div>
+        </div>
+
+        <div class="res reveal">
+          <span class="cat">Programme Delivery</span>
+          <h3>Programme Governance Pack</h3>
+          <p>RACI, decision log, and a reporting cadence you can drop into any multi-team programme — the scaffolding that keeps delivery honest when vendors and functions multiply.</p>
+          <div class="meta">
+            <span class="fmt">DOCX</span>
+            <a class="btn-dl" href="files/governance-pack.docx" download>Download</a>
+          </div>
+        </div>
+
+        <div class="res reveal">
+          <span class="cat">Operational Excellence</span>
+          <h3>Process Mapping &amp; Bottleneck Framework</h3>
+          <p>A practical walkthrough for finding where an operation actually loses time and money — mapping the flow, spotting the constraint, and knowing what to fix first.</p>
+          <div class="meta">
+            <span class="fmt">PDF</span>
+            <a class="btn-dl" href="files/process-mapping-framework.pdf" download>Download</a>
+          </div>
+        </div>
+
+        <div class="res reveal">
+          <span class="cat">Stakeholders</span>
+          <h3>Stakeholder Map &amp; Engagement Plan</h3>
+          <p>Map who holds power, who holds interest, and how you'll bring each along — built for delivering through influence when you don't hold formal authority.</p>
+          <div class="meta">
+            <span class="fmt">XLSX</span>
+            <a class="btn-dl" href="files/stakeholder-map.xlsx" download>Download</a>
+          </div>
+        </div>
+
+        <div class="res reveal">
+          <span class="cat">AI in Operations</span>
+          <h3>AI-in-Operations Starter Guide</h3>
+          <p>Where AI genuinely earns its place in an operational workflow — and where it's just noise. A grounded starting point from someone who builds the tools, not just talks about them.</p>
+          <div class="meta">
+            <span class="fmt">PDF</span>
+            <a class="btn-dl" href="files/ai-in-operations-guide.pdf" download>Download</a>
+          </div>
+        </div>
+
+        <div class="res reveal">
+          <span class="cat">Flagship Guide</span>
+          <h3>7 Principles of Operational Excellence That Actually Stick</h3>
+          <p>The short, honest version of what I've learned making improvements hold after the consultant leaves. No jargon — just the principles that survive contact with a real operation.</p>
+          <div class="meta">
+            <span class="fmt">PDF</span>
+            <a class="btn-dl" href="files/7-principles-operational-excellence.pdf" download>Download</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <section class="cta-band">
+    <div class="wrap">
+      <span class="eyebrow">Want these tailored?</span>
+      <h2>Templates get you started. Delivery gets it done.</h2>
+      <p>These are the generic versions. If you've got a real programme that needs shaping — or an operation that's leaking time — that's the work I do. Let's talk about yours.</p>
+      <div class="actions">
+        <a class="btn btn-signal" href="index.html#contact">Start a conversation</a>
+        <a class="btn btn-outline" href="index.html#work">See what I've delivered</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap foot-inner">
+    <span class="fname">Ritika Raje</span>
+    <span class="fmeta">Operational Excellence · AI-Enabled Delivery · London</span>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var els = document.querySelectorAll('.reveal');
+    if(reduce || !('IntersectionObserver' in window)){
+      els.forEach(function(e){e.classList.add('in');});
+      return;
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); }
+      });
+    },{threshold:0.12});
+    els.forEach(function(e){io.observe(e);});
+  })();
+
+  // Friendly guard for downloads that aren't uploaded yet
+  document.querySelectorAll('.btn-dl').forEach(function(a){
+    a.addEventListener('click',function(e){
+      // If the file isn't there yet, this prevents a confusing 404.
+      // Remove this whole script block once your files are uploaded to the /files/ folder.
+      if(a.dataset.ready !== 'true'){
+        e.preventDefault();
+        alert('This download will be available once the file is added. (Remove the guard script once your files are uploaded.)');
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
