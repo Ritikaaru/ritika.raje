@@ -314,17 +314,6 @@
     els.forEach(function(e){io.observe(e);});
   })();
 
-  // Friendly guard for downloads that aren't uploaded yet
-  document.querySelectorAll('.btn-dl').forEach(function(a){
-    a.addEventListener('click',function(e){
-      // If the file isn't there yet, this prevents a confusing 404.
-      // Remove this whole script block once your files are uploaded to the /files/ folder.
-      if(a.dataset.ready !== 'true'){
-        e.preventDefault();
-        alert('This download will be available once the file is added. (Remove the guard script once your files are uploaded.)');
-      }
-    });
-  });
 </script>
 
 </body>
