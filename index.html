@@ -1,424 +1,1091 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ritika Raje — Operational Excellence &amp; Digital Transformation &amp; AI-Delivery</title>
-<meta name="description" content="Constantly delivering in operational excellence, AI-enabled transformation, and programme delivery. Turning tangled operations into systems that deliver.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --ink:#0B2630;
-    --ink-soft:#16323D;
-    --paper:#ECEEEC;
-    --card:#FFFFFF;
-    --signal:#D9902B;
-    --signal-deep:#B4741C;
-    --muted:#54666A;
-    --muted-light:#8EA0A0;
-    --line:rgba(11,38,48,0.14);
-    --line-light:rgba(255,255,255,0.16);
-    --display:"Space Grotesk",system-ui,sans-serif;
-    --body:"IBM Plex Sans",system-ui,sans-serif;
-    --mono:"IBM Plex Mono",ui-monospace,monospace;
-  }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ritika Raje — Operational Excellence, Digital Transformation & AI Delivery</title>
+  <meta name="description" content="Delivering operational excellence, AI-enabled transformation, and programme leadership. Turning tangled operations into systems that deliver measurable results.">
+  <meta name="theme-color" content="#0B2630">
 
-  *{box-sizing:border-box;margin:0;padding:0;}
-  html{scroll-behavior:smooth;}
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Ritika Raje — Operational Excellence & AI Delivery">
+  <meta property="og:description" content="Delivering operational excellence, AI-enabled transformation, and programme leadership.">
+  <meta property="og:url" content="https://ritikaraje.com">
 
-  body{
-    font-family:var(--body);
-    background:var(--paper);
-    color:var(--ink);
-    line-height:1.6;
-    -webkit-font-smoothing:antialiased;
-    text-rendering:optimizeLegibility;
-  }
+  <!-- Preconnect with crossorigin for fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  .wrap{max-width:1120px;margin:0 auto;padding:0 32px;}
+  <!-- Preload critical fonts -->
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
 
-  /* --- measured-rule motif: a hairline with tick marks --- */
-  .measured-rule{
-    height:14px;
-    border-top:1px solid var(--line);
-    background-image:repeating-linear-gradient(to right,var(--line) 0,var(--line) 1px,transparent 1px,transparent 40px);
-    background-size:40px 7px;
-    background-repeat:repeat-x;
-  }
+  <style>
+    /* Modern CSS custom properties with fallbacks */
+    :root {
+      --ink: #0b2630;
+      --ink-soft: #16323d;
+      --paper: #eceeec;
+      --card: #ffffff;
+      --signal: #d9902b;
+      --signal-deep: #b4741c;
+      --muted: #54666a;
+      --muted-light: #8ea0a0;
+      --line: rgba(11, 38, 48, 0.14);
+      --line-light: rgba(255, 255, 255, 0.16);
+      --display: "Space Grotesk", system-ui, sans-serif;
+      --body: "IBM Plex Sans", system-ui, sans-serif;
+      --mono: "IBM Plex Mono", ui-monospace, monospace;
+      --shadow-sm: 0 2px 8px rgba(11, 38, 48, 0.06);
+      --shadow-md: 0 8px 24px rgba(11, 38, 48, 0.12);
+      --transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      --focus-ring: 3px solid var(--signal);
+      --focus-offset: 2px;
+    }
 
-  /* --- eyebrow labels --- */
-  .eyebrow{
-    font-family:var(--mono);
-    font-size:12px;
-    font-weight:500;
-    letter-spacing:0.18em;
-    text-transform:uppercase;
-    color:var(--signal-deep);
-  }
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-  /* ============ HEADER ============ */
-  header.site{
-    position:sticky;top:0;z-index:50;
-    background:rgba(236,238,236,0.86);
-    backdrop-filter:saturate(1.2) blur(8px);
-    border-bottom:1px solid var(--line);
-  }
-  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:72px;}
-  .brand{display:flex;flex-direction:column;line-height:1.1;text-decoration:none;color:var(--ink);}
-  .brand .name{font-family:var(--display);font-weight:600;font-size:19px;letter-spacing:-0.01em;}
-  .brand .role{font-family:var(--mono);font-size:10.5px;letter-spacing:0.16em;text-transform:uppercase;color:var(--muted);margin-top:3px;}
-  nav.links{display:flex;align-items:center;gap:34px;}
-  nav.links a{font-size:15px;color:var(--ink);text-decoration:none;font-weight:500;transition:color .2s;}
-  nav.links a:hover{color:var(--signal-deep);}
-  .btn{
-    font-family:var(--body);font-weight:600;font-size:15px;
-    padding:11px 20px;border-radius:2px;text-decoration:none;
-    display:inline-block;transition:transform .15s ease,background .2s,color .2s;cursor:pointer;border:none;
-  }
-  .btn-primary{background:var(--ink);color:#fff;}
-  .btn-primary:hover{background:var(--signal-deep);}
-  .btn-ghost{background:transparent;color:var(--ink);border:1px solid var(--ink);}
-  .btn-ghost:hover{background:var(--ink);color:#fff;}
-  .nav-cta{display:inline-block;}
-  .menu-toggle{display:none;background:none;border:none;cursor:pointer;font-family:var(--mono);font-size:13px;color:var(--ink);letter-spacing:0.1em;}
+    html {
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+    }
 
-  /* ============ HERO ============ */
-  .hero{padding:88px 0 64px;}
-  .hero .eyebrow{margin-bottom:26px;display:block;}
-  .hero h1{
-    font-family:var(--display);
-    font-weight:600;
-    font-size:clamp(38px,6vw,68px);
-    line-height:1.02;
-    letter-spacing:-0.025em;
-    max-width:15ch;
-  }
-  .hero h1 em{font-style:normal;color:var(--signal-deep);}
-  .hero .lede{
-    font-size:clamp(17px,2vw,20px);
-    color:var(--muted);
-    max-width:52ch;
-    margin-top:28px;
-  }
-  .hero-actions{display:flex;gap:14px;margin-top:38px;flex-wrap:wrap;}
+    body {
+      font-family: var(--body);
+      background: var(--paper);
+      color: var(--ink);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
 
-  /* readout strip */
-  .readout{
-    margin-top:64px;
-    display:grid;grid-template-columns:repeat(4,1fr);
-    border-top:1px solid var(--line);
-  }
-  .readout .cell{padding:26px 22px 4px 0;border-right:1px solid var(--line);}
-  .readout .cell:last-child{border-right:none;padding-right:0;}
-  .readout .fig{font-family:var(--mono);font-weight:600;font-size:clamp(28px,3.4vw,38px);color:var(--ink);letter-spacing:-0.02em;line-height:1;}
-  .readout .fig span{color:var(--signal);}
-  .readout .lbl{font-size:13.5px;color:var(--muted);margin-top:12px;max-width:22ch;}
+    main {
+      flex: 1;
+    }
 
-  /* ============ SECTION BASE ============ */
-  section{padding:78px 0;}
-  .sec-head{max-width:60ch;margin-bottom:48px;}
-  .sec-head .eyebrow{display:block;margin-bottom:18px;}
-  .sec-head h2{font-family:var(--display);font-weight:600;font-size:clamp(28px,3.6vw,40px);letter-spacing:-0.02em;line-height:1.08;}
-  .sec-head p{color:var(--muted);font-size:17px;margin-top:16px;}
+    img,
+    svg {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
 
-  /* ============ SERVICES ============ */
-  .services{background:var(--ink);color:#F4F6F5;}
-  .services .eyebrow{color:var(--signal);}
-  .services .sec-head h2{color:#fff;}
-  .services .sec-head p{color:var(--muted-light);}
-  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line-light);border:1px solid var(--line-light);}
-  .svc{background:var(--ink);padding:34px 30px 40px;transition:background .25s;}
-  .svc:hover{background:var(--ink-soft);}
-  .svc .num{font-family:var(--mono);font-size:12px;color:var(--signal);letter-spacing:0.1em;}
-  .svc h3{font-family:var(--display);font-weight:600;font-size:21px;margin:20px 0 14px;color:#fff;letter-spacing:-0.01em;line-height:1.2;}
-  .svc p{font-size:15px;color:#B9C6C6;line-height:1.65;}
-  .svc ul{list-style:none;margin-top:18px;}
-  .svc li{font-size:14px;color:#9FB0B0;padding:7px 0 7px 20px;position:relative;border-top:1px solid rgba(255,255,255,0.08);}
-  .svc li:first-child{border-top:none;}
-  .svc li::before{content:"→";position:absolute;left:0;color:var(--signal);}
+    .wrap {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
 
-  /* ============ OUTCOMES / PROOF ============ */
-  .outcomes .sec-head .eyebrow{color:var(--signal-deep);}
-  .outcome-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border-top:2px solid var(--ink);}
-  .outcome{padding:34px 34px 34px 0;border-bottom:1px solid var(--line);}
-  .outcome:nth-child(odd){border-right:1px solid var(--line);padding-right:44px;}
-  .outcome:nth-child(even){padding-left:44px;}
-  .outcome .fig{font-family:var(--mono);font-weight:600;font-size:clamp(32px,4vw,44px);color:var(--ink);letter-spacing:-0.02em;line-height:1;}
-  .outcome .fig span{color:var(--signal-deep);}
-  .outcome .ctx{font-size:15.5px;color:var(--muted);margin-top:16px;max-width:40ch;}
-  .outcome .tag{font-family:var(--mono);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted-light);margin-top:16px;}
+    /* Measured-rule motif */
+    .measured-rule {
+      height: 14px;
+      border-top: 1px solid var(--line);
+      background-image: repeating-linear-gradient(
+        to right,
+        var(--line) 0,
+        var(--line) 1px,
+        transparent 1px,
+        transparent 40px
+      );
+      background-size: 40px 7px;
+      background-repeat: repeat-x;
+    }
 
-  /* ============ ABOUT ============ */
-  .about{background:var(--card);}
-  .about-layout{display:grid;grid-template-columns:1.4fr 1fr;gap:64px;align-items:start;}
-  .about-body p{font-size:17px;color:var(--ink);margin-bottom:20px;max-width:56ch;}
-  .about-body p.muted{color:var(--muted);font-size:15.5px;}
-  .cred-panel{border:1px solid var(--line);padding:30px;background:var(--paper);}
-  .cred-panel .eyebrow{display:block;margin-bottom:20px;}
-  .cred-row{padding:15px 0;border-top:1px solid var(--line);}
-  .cred-row:first-of-type{border-top:none;padding-top:0;}
-  .cred-row .k{font-family:var(--mono);font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);}
-  .cred-row .v{font-size:15.5px;color:var(--ink);font-weight:500;margin-top:4px;}
+    /* Eyebrow labels */
+    .eyebrow {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--signal-deep);
+      display: block;
+      margin-bottom: 1.5rem;
+    }
 
-  /* ============ CONTACT ============ */
-  .contact{background:var(--ink);color:#fff;text-align:left;}
-  .contact .eyebrow{color:var(--signal);display:block;margin-bottom:22px;}
-  .contact h2{font-family:var(--display);font-weight:600;font-size:clamp(30px,4.4vw,50px);letter-spacing:-0.025em;line-height:1.05;max-width:18ch;}
-  .contact p{color:var(--muted-light);font-size:18px;margin-top:22px;max-width:50ch;}
-  .contact-actions{display:flex;gap:14px;margin-top:38px;flex-wrap:wrap;}
-  .btn-signal{background:var(--signal);color:var(--ink);}
-  .btn-signal:hover{background:#fff;}
-  .btn-outline{background:transparent;color:#fff;border:1px solid rgba(255,255,255,0.5);}
-  .btn-outline:hover{border-color:#fff;background:rgba(255,255,255,0.08);}
+    /* Header */
+    header.site {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(236, 238, 236, 0.9);
+      backdrop-filter: saturate(1.2) blur(10px);
+      -webkit-backdrop-filter: saturate(1.2) blur(10px);
+      border-bottom: 1px solid var(--line);
+      transition: box-shadow var(--transition);
+    }
 
-  /* ============ FOOTER ============ */
-  footer.site{background:var(--ink);color:var(--muted-light);padding:40px 0 48px;border-top:1px solid var(--line-light);}
-  .foot-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
-  .foot-inner .fname{font-family:var(--display);color:#fff;font-weight:500;font-size:16px;}
-  .foot-inner .fmeta{font-family:var(--mono);font-size:12px;letter-spacing:0.08em;}
+    header.site.scrolled {
+      box-shadow: var(--shadow-sm);
+    }
 
-  /* ============ REVEAL ============ */
-  .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease;}
-  .reveal.in{opacity:1;transform:none;}
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+      gap: 1rem;
+    }
 
-  /* ============ RESPONSIVE ============ */
-  @media (max-width:860px){
-    .wrap{padding:0 22px;}
-    nav.links{display:none;}
-    .nav-cta{display:none;}
-    .menu-toggle{display:block;}
-    .readout{grid-template-columns:repeat(2,1fr);}
-    .readout .cell:nth-child(2){border-right:none;}
-    .readout .cell{padding-right:0;}
-    .svc-grid{grid-template-columns:1fr;}
-    .outcome-grid{grid-template-columns:1fr;}
-    .outcome,.outcome:nth-child(odd),.outcome:nth-child(even){padding:28px 0;border-right:none;}
-    .about-layout{grid-template-columns:1fr;gap:36px;}
-  }
-  @media (max-width:480px){
-    .readout{grid-template-columns:1fr;}
-    .readout .cell{border-right:none;}
-  }
+    .brand {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+      text-decoration: none;
+      color: var(--ink);
+      transition: opacity var(--transition);
+    }
 
-  @media (prefers-reduced-motion:reduce){
-    html{scroll-behavior:auto;}
-    .reveal{transition:none;opacity:1;transform:none;}
-    .btn,.svc{transition:none;}
-  }
+    .brand:hover {
+      opacity: 0.8;
+    }
 
-  a:focus-visible,.btn:focus-visible,button:focus-visible{outline:2px solid var(--signal);outline-offset:3px;}
-</style>
+    .brand .name {
+      font-family: var(--display);
+      font-weight: 600;
+      font-size: 1.1875rem;
+      letter-spacing: -0.01em;
+    }
+
+    .brand .role {
+      font-family: var(--mono);
+      font-size: 0.656rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 3px;
+    }
+
+    nav.links {
+      display: flex;
+      align-items: center;
+      gap: 2.125rem;
+    }
+
+    nav.links a {
+      font-size: 0.9375rem;
+      color: var(--ink);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color var(--transition);
+      position: relative;
+    }
+
+    nav.links a::after {
+      content: "";
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--signal);
+      transition: width var(--transition);
+    }
+
+    nav.links a:hover {
+      color: var(--signal-deep);
+    }
+
+    nav.links a:hover::after {
+      width: 100%;
+    }
+
+    .btn {
+      font-family: var(--body);
+      font-weight: 600;
+      font-size: 0.9375rem;
+      padding: 0.6875rem 1.25rem;
+      border-radius: 2px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all var(--transition);
+      cursor: pointer;
+      border: 2px solid transparent;
+      line-height: 1.4;
+    }
+
+    .btn-primary {
+      background: var(--ink);
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      background: var(--signal-deep);
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--ink);
+      border-color: var(--ink);
+    }
+
+    .btn-ghost:hover {
+      background: var(--ink);
+      color: #fff;
+      transform: translateY(-1px);
+    }
+
+    .btn-signal {
+      background: var(--signal);
+      color: var(--ink);
+    }
+
+    .btn-signal:hover {
+      background: #fff;
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: #fff;
+      border-color: rgba(255, 255, 255, 0.5);
+    }
+
+    .btn-outline:hover {
+      border-color: #fff;
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .nav-cta {
+      display: inline-flex;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: 2px solid var(--ink);
+      border-radius: 2px;
+      cursor: pointer;
+      font-family: var(--mono);
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--ink);
+      letter-spacing: 0.1em;
+      padding: 0.5rem 0.75rem;
+      transition: all var(--transition);
+    }
+
+    .menu-toggle:hover {
+      background: var(--ink);
+      color: #fff;
+    }
+
+    /* Hero */
+    .hero {
+      padding: 5.5rem 0 4rem;
+    }
+
+    .hero h1 {
+      font-family: var(--display);
+      font-weight: 600;
+      font-size: clamp(2.375rem, 6vw, 4.25rem);
+      line-height: 1.02;
+      letter-spacing: -0.025em;
+      max-width: 15ch;
+    }
+
+    .hero h1 em {
+      font-style: normal;
+      color: var(--signal-deep);
+    }
+
+    .hero .lede {
+      font-size: clamp(1.0625rem, 2vw, 1.25rem);
+      color: var(--muted);
+      max-width: 52ch;
+      margin-top: 1.75rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 0.875rem;
+      margin-top: 2.375rem;
+      flex-wrap: wrap;
+    }
+
+    /* Readout strip */
+    .readout {
+      margin-top: 4rem;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid var(--line);
+    }
+
+    .readout .cell {
+      padding: 1.625rem 1.375rem 0.25rem 0;
+      border-right: 1px solid var(--line);
+    }
+
+    .readout .cell:last-child {
+      border-right: none;
+      padding-right: 0;
+    }
+
+    .readout .fig {
+      font-family: var(--mono);
+      font-weight: 600;
+      font-size: clamp(1.75rem, 3.4vw, 2.375rem);
+      color: var(--ink);
+      letter-spacing: -0.02em;
+      line-height: 1;
+    }
+
+    .readout .fig span {
+      color: var(--signal);
+    }
+
+    .readout .lbl {
+      font-size: 0.84375rem;
+      color: var(--muted);
+      margin-top: 0.75rem;
+      max-width: 22ch;
+    }
+
+    /* Section base */
+    section {
+      padding: 4.875rem 0;
+    }
+
+    .sec-head {
+      max-width: 60ch;
+      margin-bottom: 3rem;
+    }
+
+    .sec-head h2 {
+      font-family: var(--display);
+      font-weight: 600;
+      font-size: clamp(1.75rem, 3.6vw, 2.5rem);
+      letter-spacing: -0.02em;
+      line-height: 1.08;
+    }
+
+    .sec-head p {
+      color: var(--muted);
+      font-size: 1.0625rem;
+      margin-top: 1rem;
+    }
+
+    /* Services */
+    .services {
+      background: var(--ink);
+      color: #f4f6f5;
+    }
+
+    .services .eyebrow {
+      color: var(--signal);
+    }
+
+    .services .sec-head h2 {
+      color: #fff;
+    }
+
+    .services .sec-head p {
+      color: var(--muted-light);
+    }
+
+    .svc-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--line-light);
+      border: 1px solid var(--line-light);
+    }
+
+    .svc {
+      background: var(--ink);
+      padding: 2.125rem 1.875rem 2.5rem;
+      transition: background var(--transition), transform var(--transition);
+    }
+
+    .svc:hover {
+      background: var(--ink-soft);
+      transform: translateY(-2px);
+    }
+
+    .svc .num {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      color: var(--signal);
+      letter-spacing: 0.1em;
+    }
+
+    .svc h3 {
+      font-family: var(--display);
+      font-weight: 600;
+      font-size: 1.3125rem;
+      margin: 1.25rem 0 0.875rem;
+      color: #fff;
+      letter-spacing: -0.01em;
+      line-height: 1.2;
+    }
+
+    .svc p {
+      font-size: 0.9375rem;
+      color: #b9c6c6;
+      line-height: 1.65;
+    }
+
+    .svc ul {
+      list-style: none;
+      margin-top: 1.125rem;
+    }
+
+    .svc li {
+      font-size: 0.875rem;
+      color: #9fb0b0;
+      padding: 0.4375rem 0 0.4375rem 1.25rem;
+      position: relative;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .svc li:first-child {
+      border-top: none;
+    }
+
+    .svc li::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: var(--signal);
+    }
+
+    /* Outcomes */
+    .outcome-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0;
+      border-top: 2px solid var(--ink);
+    }
+
+    .outcome {
+      padding: 2.125rem 2.125rem 2.125rem 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .outcome:nth-child(odd) {
+      border-right: 1px solid var(--line);
+      padding-right: 2.75rem;
+    }
+
+    .outcome:nth-child(even) {
+      padding-left: 2.75rem;
+    }
+
+    .outcome .fig {
+      font-family: var(--mono);
+      font-weight: 600;
+      font-size: clamp(2rem, 4vw, 2.75rem);
+      color: var(--ink);
+      letter-spacing: -0.02em;
+      line-height: 1;
+    }
+
+    .outcome .fig span {
+      color: var(--signal-deep);
+    }
+
+    .outcome .ctx {
+      font-size: 0.96875rem;
+      color: var(--muted);
+      margin-top: 1rem;
+      max-width: 40ch;
+    }
+
+    .outcome .tag {
+      font-family: var(--mono);
+      font-size: 0.6875rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted-light);
+      margin-top: 1rem;
+      font-weight: 500;
+    }
+
+    /* About */
+    .about {
+      background: var(--card);
+    }
+
+    .about-layout {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .about-body p {
+      font-size: 1.0625rem;
+      color: var(--ink);
+      margin-bottom: 1.25rem;
+      max-width: 56ch;
+    }
+
+    .about-body p.muted {
+      color: var(--muted);
+      font-size: 0.96875rem;
+    }
+
+    .cred-panel {
+      border: 1px solid var(--line);
+      padding: 1.875rem;
+      background: var(--paper);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .cred-row {
+      padding: 0.9375rem 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .cred-row:first-of-type {
+      border-top: none;
+      padding-top: 0;
+    }
+
+    .cred-row .k {
+      font-family: var(--mono);
+      font-size: 0.6875rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .cred-row .v {
+      font-size: 0.96875rem;
+      color: var(--ink);
+      font-weight: 500;
+      margin-top: 0.25rem;
+    }
+
+    /* Contact */
+    .contact {
+      background: var(--ink);
+      color: #fff;
+      text-align: left;
+    }
+
+    .contact .eyebrow {
+      color: var(--signal);
+      margin-bottom: 1.375rem;
+    }
+
+    .contact h2 {
+      font-family: var(--display);
+      font-weight: 600;
+      font-size: clamp(1.875rem, 4.4vw, 3.125rem);
+      letter-spacing: -0.025em;
+      line-height: 1.05;
+      max-width: 18ch;
+    }
+
+    .contact p {
+      color: var(--muted-light);
+      font-size: 1.125rem;
+      margin-top: 1.375rem;
+      max-width: 50ch;
+    }
+
+    .contact-actions {
+      display: flex;
+      gap: 0.875rem;
+      margin-top: 2.375rem;
+      flex-wrap: wrap;
+    }
+
+    /* Footer */
+    footer.site {
+      background: var(--ink);
+      color: var(--muted-light);
+      padding: 2.5rem 0 3rem;
+      border-top: 1px solid var(--line-light);
+    }
+
+    .foot-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .foot-inner .fname {
+      font-family: var(--display);
+      color: #fff;
+      font-weight: 500;
+      font-size: 1rem;
+    }
+
+    .foot-inner .fmeta {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+    }
+
+    /* Reveal animations */
+    .reveal {
+      opacity: 0;
+      transform: translateY(1.125rem);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.in {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* Responsive */
+    @media (max-width: 860px) {
+      .wrap {
+        padding: 0 1.375rem;
+      }
+
+      nav.links,
+      .nav-cta {
+        display: none;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .readout {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .readout .cell:nth-child(2) {
+        border-right: none;
+      }
+
+      .readout .cell {
+        padding-right: 0;
+      }
+
+      .svc-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .outcome-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .outcome,
+      .outcome:nth-child(odd),
+      .outcome:nth-child(even) {
+        padding: 1.75rem 0;
+        border-right: none;
+      }
+
+      .about-layout {
+        grid-template-columns: 1fr;
+        gap: 2.25rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .readout {
+        grid-template-columns: 1fr;
+      }
+
+      .readout .cell {
+        border-right: none;
+      }
+    }
+
+    /* Reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .reveal {
+        transition: none;
+        opacity: 1;
+        transform: none;
+      }
+
+      .btn,
+      .svc,
+      .brand,
+      nav.links a {
+        transition: none;
+      }
+    }
+
+    /* Focus visible */
+    a:focus-visible,
+    .btn:focus-visible,
+    button:focus-visible {
+      outline: var(--focus-ring);
+      outline-offset: var(--focus-offset);
+      border-radius: 2px;
+    }
+
+    /* Skip link */
+    .skip-link {
+      position: absolute;
+      top: -100%;
+      left: 1rem;
+      background: var(--ink);
+      color: #fff;
+      padding: 0.75rem 1.25rem;
+      border-radius: 2px;
+      z-index: 100;
+      transition: top 0.2s;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .skip-link:focus {
+      top: 1rem;
+    }
+  </style>
 </head>
+
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
 
-<header class="site">
-  <div class="wrap nav-inner">
-    <a class="brand" href="#top">
-      <span class="name">Ritika Raje</span>
-      <span class="role">Operational Excellence · Delivery</span>
-    </a>
-    <nav class="links" id="navlinks">
-      <a href="#work">Outcomes</a>
-      <a href="#services">Services</a>
-      <a href="templates.html">Templates</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </nav>
-    <a class="btn btn-primary nav-cta" href="#contact">Start a conversation</a>
-    <button class="menu-toggle" id="menuToggle" aria-label="Jump to contact">CONTACT →</button>
-  </div>
-</header>
+  <header class="site" id="site-header">
+    <div class="wrap nav-inner">
+      <a class="brand" href="#top" aria-label="Ritika Raje — home">
+        <span class="name">Ritika Raje</span>
+        <span class="role">Operational Excellence · Delivery</span>
+      </a>
 
-<main id="top">
+      <nav class="links" id="navlinks" aria-label="Primary navigation">
+        <a href="#work">Outcomes</a>
+        <a href="#services">Services</a>
+        <a href="templates.html">Templates</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="wrap">
-      <span class="eyebrow reveal"> </span>
-      <h1 class="reveal">I turn tangled operations into <em>systems that deliver.</em></h1>
-      <p class="lede reveal">Nine years turning underperforming processes, stalled programmes, and manual overhead into measurable operational gains — across robotics, energy, and regulated manufacturing. Now working independently, with AI built into how the work actually gets done.</p>
-      <div class="hero-actions reveal">
-        <a class="btn btn-primary" href="#contact">Start a conversation</a>
-        <a class="btn btn-ghost" href="#work">See the outcomes</a>
-      </div>
+      <a class="btn btn-primary nav-cta" href="#contact" aria-label="Start a conversation">
+        Start a conversation
+        <span aria-hidden="true">→</span>
+      </a>
 
-      <div class="readout reveal">
-        <div class="cell">
-          <div class="fig">600<span>+</span></div>
-          <div class="lbl">operational days saved a year through after-sales automation</div>
-        </div>
-        <div class="cell">
-          <div class="fig">60<span>%</span></div>
-          <div class="lbl">cycle-time cut on an ERP rollout across 110+ users</div>
-        </div>
-        <div class="cell">
-          <div class="fig">£500K<span>+</span></div>
-          <div class="lbl">annual savings unlocked through process redesign</div>
-        </div>
-        <div class="cell">
-          <div class="fig">85<span>%</span></div>
-          <div class="lbl">of issues resolved remotely after platform redesign</div>
-        </div>
-      </div>
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        aria-label="Jump to contact section"
+        aria-expanded="false"
+        aria-controls="contact"
+      >
+        CONTACT →
+      </button>
     </div>
-  </section>
+  </header>
 
-  <div class="measured-rule"></div>
+  <main id="main-content">
+    <!-- HERO -->
+    <section class="hero" id="top" aria-labelledby="hero-heading">
+      <div class="wrap">
+        <span class="eyebrow reveal" aria-hidden="true"></span>
+        <h1 id="hero-heading" class="reveal">
+          I turn tangled operations into <em>systems that deliver.</em>
+        </h1>
+        <p class="lede reveal">
+          Nine years turning underperforming processes, stalled programmes, and manual
+          overhead into measurable operational gains — across robotics, energy, and
+          regulated manufacturing. Now working independently, with AI built into how the
+          work actually gets done.
+        </p>
+        <div class="hero-actions reveal">
+          <a class="btn btn-primary" href="#contact">
+            Start a conversation
+            <span aria-hidden="true">→</span>
+          </a>
+          <a class="btn btn-ghost" href="#work">See the outcomes</a>
+        </div>
 
-  <!-- SERVICES -->
-  <section class="services" id="services">
-    <div class="wrap">
-      <div class="sec-head reveal">
-        <span class="eyebrow">How I help</span>
-        <h2>Three ways to put me to work.</h2>
-        <p>Whether it's an operation that's leaking time, a programme that's drifting, or an AI idea that needs to become something real — the common thread is delivery that sticks after I've gone.</p>
-      </div>
-      <div class="svc-grid">
-        <div class="svc reveal">
-          <div class="num">01</div>
-          <h3>Operational Excellence &amp; Process Transformation</h3>
-          <p>Finding where the time, cost, and rework actually go — then redesigning the process so the gains hold.</p>
-          <ul>
-            <li>Process mapping &amp; bottleneck analysis</li>
-            <li>Standardisation across teams &amp; sites</li>
-            <li>ERP and systems rollout</li>
-            <li>Cost &amp; cycle-time reduction</li>
-          </ul>
-        </div>
-        <div class="svc reveal">
-          <div class="num">02</div>
-          <h3>Programme &amp; Delivery Leadership</h3>
-          <p>Fractional or interim delivery leadership for programmes that span teams, vendors, and functions — and need someone who can hold the whole thing together.</p>
-          <ul>
-            <li>Multi-vendor governance</li>
-            <li>Senior stakeholder management</li>
-            <li>Delivery from CEO's-office scope</li>
-            <li>Recovery of stalled programmes</li>
-          </ul>
-        </div>
-        <div class="svc reveal">
-          <div class="num">03</div>
-          <h3>AI-Enabled Operations</h3>
-          <p>Not slideware about AI — working tools. I design and build practical AI into operational workflows, and I've shipped my own applications end to end.</p>
-          <ul>
-            <li>AI-assisted issue triage &amp; support</li>
-            <li>Workflow automation</li>
-            <li>Rapid prototyping of internal tools</li>
-            <li>Adoption that outlasts the pilot</li>
-          </ul>
+        <div class="readout reveal" role="list" aria-label="Key metrics">
+          <div class="cell" role="listitem">
+            <div class="fig">600<span>+</span></div>
+            <div class="lbl">operational days saved a year through after-sales automation</div>
+          </div>
+          <div class="cell" role="listitem">
+            <div class="fig">60<span>%</span></div>
+            <div class="lbl">cycle-time cut on an ERP rollout across 110+ users</div>
+          </div>
+          <div class="cell" role="listitem">
+            <div class="fig">£500K<span>+</span></div>
+            <div class="lbl">annual savings unlocked through process redesign</div>
+          </div>
+          <div class="cell" role="listitem">
+            <div class="fig">85<span>%</span></div>
+            <div class="lbl">of issues resolved remotely after platform redesign</div>
+          </div>
         </div>
       </div>
+    </section>
+
+    <div class="measured-rule" aria-hidden="true"></div>
+
+    <!-- SERVICES -->
+    <section class="services" id="services" aria-labelledby="services-heading">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <span class="eyebrow">How I help</span>
+          <h2 id="services-heading">Three ways to put me to work.</h2>
+          <p>
+            Whether it's an operation that's leaking time, a programme that's drifting, or
+            an AI idea that needs to become something real — the common thread is delivery
+            that sticks after I've gone.
+          </p>
+        </div>
+        <div class="svc-grid">
+          <article class="svc reveal">
+            <div class="num" aria-hidden="true">01</div>
+            <h3>Operational Excellence &amp; Process Transformation</h3>
+            <p>Finding where the time, cost, and rework actually go — then redesigning the process so the gains hold.</p>
+            <ul>
+              <li>Process mapping &amp; bottleneck analysis</li>
+              <li>Standardisation across teams &amp; sites</li>
+              <li>ERP and systems rollout</li>
+              <li>Cost &amp; cycle-time reduction</li>
+            </ul>
+          </article>
+          <article class="svc reveal">
+            <div class="num" aria-hidden="true">02</div>
+            <h3>Programme &amp; Delivery Leadership</h3>
+            <p>Fractional or interim delivery leadership for programmes that span teams, vendors, and functions — and need someone who can hold the whole thing together.</p>
+            <ul>
+              <li>Multi-vendor governance</li>
+              <li>Senior stakeholder management</li>
+              <li>Delivery from CEO's-office scope</li>
+              <li>Recovery of stalled programmes</li>
+            </ul>
+          </article>
+          <article class="svc reveal">
+            <div class="num" aria-hidden="true">03</div>
+            <h3>AI-Enabled Operations</h3>
+            <p>Not slideware about AI — working tools. I design and build practical AI into operational workflows, and I've shipped my own applications end to end.</p>
+            <ul>
+              <li>AI-assisted issue triage &amp; support</li>
+              <li>Workflow automation</li>
+              <li>Rapid prototyping of internal tools</li>
+              <li>Adoption that outlasts the pilot</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- OUTCOMES -->
+    <section class="outcomes" id="work" aria-labelledby="outcomes-heading">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <span class="eyebrow">Selected outcomes</span>
+          <h2 id="outcomes-heading">The receipts.</h2>
+          <p>A career measured in numbers, not narratives. A few that stand for the rest.</p>
+        </div>
+        <div class="outcome-grid">
+          <article class="outcome reveal">
+            <div class="fig">600<span>+</span> days</div>
+            <div class="ctx">Saved annually by redesigning an after-sales service platform so most issues resolve remotely instead of on site.</div>
+            <div class="tag">Robotics &amp; Automation</div>
+          </article>
+          <article class="outcome reveal">
+            <div class="fig">60<span>%</span></div>
+            <div class="ctx">Cut from process cycle time on an ERP implementation rolled out to more than 110 users.</div>
+            <div class="tag">Regulated Manufacturing</div>
+          </article>
+          <article class="outcome reveal">
+            <div class="fig">40<span>+</span></div>
+            <div class="ctx">Processes standardised in partnership with KPMG, cutting the bid cycle by around 40%.</div>
+            <div class="tag">Energy Transmission</div>
+          </article>
+          <article class="outcome reveal">
+            <div class="fig">393</div>
+            <div class="ctx">Delegates from 61 countries at a summit I directed end to end — delivered at 8.6/10 satisfaction.</div>
+            <div class="tag">Programme Leadership · PMI UK</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about" id="about" aria-labelledby="about-heading">
+      <div class="wrap about-layout">
+        <div class="about-body reveal">
+          <span class="eyebrow" style="display: block; margin-bottom: 1.25rem">About</span>
+          <h2 id="about-heading" class="sr-only" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap;">About Ritika Raje</h2>
+          <p>
+            I spend my time on the messy middle of delivery — the part where strategy meets a
+            real operation with real people, real systems, and real constraints, and someone
+            has to make it actually work.
+          </p>
+          <p>
+            Over nine years I've done that across three very different worlds: robotics and
+            warehouse automation, high-voltage energy transmission, and regulated
+            pharmaceutical manufacturing. Different industries, same job — find where the
+            operation is losing time or money, redesign it, and make the improvement hold
+            after I move on.
+          </p>
+          <p>
+            More recently I've been building AI into that work directly. I've designed and
+            shipped my own applications end to end, so when I talk about AI in operations it
+            comes from having built the thing, not from a deck.
+          </p>
+          <p class="muted">
+            I also lead programme and conference delivery for the PMI UK Chapter as a
+            volunteer — most recently directing a global sustainability summit.
+          </p>
+        </div>
+        <aside class="cred-panel reveal" aria-label="Credentials">
+          <span class="eyebrow">Credentials</span>
+          <div class="cred-row">
+            <div class="k">Experience</div>
+            <div class="v">9 years, delivery &amp; transformation</div>
+          </div>
+          <div class="cred-row">
+            <div class="k">Education</div>
+            <div class="v">MBA, IIM Lucknow · B.E. Biotechnology</div>
+          </div>
+          <div class="cred-row">
+            <div class="k">Certifications</div>
+            <div class="v">PMP · IPMA Level C</div>
+          </div>
+          <div class="cred-row">
+            <div class="k">Builds with</div>
+            <div class="v">Next.js · Node · Claude API</div>
+          </div>
+          <div class="cred-row">
+            <div class="k">Based in</div>
+            <div class="v">London, UK</div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact" aria-labelledby="contact-heading">
+      <div class="wrap">
+        <span class="eyebrow">Get in touch</span>
+        <h2 id="contact-heading">Have a delivery problem worth solving?</h2>
+        <p>
+          Tell me what's stuck. If I can help, I'll say so plainly — and if someone else is
+          a better fit, I'll say that too.
+        </p>
+        <div class="contact-actions">
+          <a class="btn btn-signal" href="mailto:ritika.raje03@gmail.com?subject=Consulting%20enquiry">
+            Email me
+            <span aria-hidden="true">✉</span>
+          </a>
+          <a
+            class="btn btn-outline"
+            href="https://www.linkedin.com/in/ritika-raje/"
+            id="linkedin-link"
+            target="_blank"
+            rel="noopener"
+            aria-label="Connect with Ritika Raje on LinkedIn (opens in new tab)"
+          >
+            Connect on LinkedIn
+            <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site" role="contentinfo">
+    <div class="wrap foot-inner">
+      <span class="fname">Ritika Raje</span>
+      <span class="fmeta">Operational Excellence · AI-Enabled Delivery · London</span>
     </div>
-  </section>
+  </footer>
 
-  <!-- OUTCOMES -->
-  <section class="outcomes" id="work">
-    <div class="wrap">
-      <div class="sec-head reveal">
-        <span class="eyebrow">Selected outcomes</span>
-        <h2>The receipts.</h2>
-        <p>A career measured in numbers, not narratives. A few that stand for the rest.</p>
-      </div>
-      <div class="outcome-grid">
-        <div class="outcome reveal">
-          <div class="fig">600<span>+</span> days</div>
-          <div class="ctx">Saved annually by redesigning an after-sales service platform so most issues resolve remotely instead of on site.</div>
-          <div class="tag">Robotics &amp; Automation</div>
-        </div>
-        <div class="outcome reveal">
-          <div class="fig">60<span>%</span></div>
-          <div class="ctx">Cut from process cycle time on an ERP implementation rolled out to more than 110 users.</div>
-          <div class="tag">Regulated Manufacturing</div>
-        </div>
-        <div class="outcome reveal">
-          <div class="fig">40<span>+</span></div>
-          <div class="ctx">Processes standardised in partnership with KPMG, cutting the bid cycle by around 40%.</div>
-          <div class="tag">Energy Transmission</div>
-        </div>
-        <div class="outcome reveal">
-          <div class="fig">393</div>
-          <div class="ctx">Delegates from 61 countries at a summit I directed end to end — delivered at 8.6/10 satisfaction.</div>
-          <div class="tag">Programme Leadership · PMI UK</div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <script>
+    (function () {
+      'use strict';
 
-  <!-- ABOUT -->
-  <section class="about" id="about">
-    <div class="wrap about-layout">
-      <div class="about-body reveal">
-        <span class="eyebrow" style="display:block;margin-bottom:20px;">About</span>
-        <p>I spend my time on the messy middle of delivery — the part where strategy meets a real operation with real people, real systems, and real constraints, and someone has to make it actually work.</p>
-        <p>Over nine years I've done that across three very different worlds: robotics and warehouse automation, high-voltage energy transmission, and regulated pharmaceutical manufacturing. Different industries, same job — find where the operation is losing time or money, redesign it, and make the improvement hold after I move on.</p>
-        <p>More recently I've been building AI into that work directly. I've designed and shipped my own applications end to end, so when I talk about AI in operations it comes from having built the thing, not from a deck.</p>
-        <p class="muted">I also lead programme and conference delivery for the PMI UK Chapter as a volunteer — most recently directing a global sustainability summit.</p>
-      </div>
-      <aside class="cred-panel reveal">
-        <span class="eyebrow">Credentials</span>
-        <div class="cred-row"><div class="k">Experience</div><div class="v">9 years, delivery &amp; transformation</div></div>
-        <div class="cred-row"><div class="k">Education</div><div class="v">MBA, IIM Lucknow · B.E. Biotechnology</div></div>
-        <div class="cred-row"><div class="k">Certifications</div><div class="v">PMP · IPMA Level C</div></div>
-        <div class="cred-row"><div class="k">Builds with</div><div class="v">Next.js · Node · Claude API</div></div>
-        <div class="cred-row"><div class="k">Based in</div><div class="v">London, UK</div></div>
-      </aside>
-    </div>
-  </section>
+      // Intersection Observer for scroll reveal with reduced motion support
+      const prefersReducedMotion = window.matchMedia(
+        '(prefers-reduced-motion: reduce)'
+      ).matches;
 
-  <!-- CONTACT -->
-  <section class="contact" id="contact">
-    <div class="wrap">
-      <span class="eyebrow">Get in touch</span>
-      <h2>Have a delivery problem worth solving?</h2>
-      <p>Tell me what's stuck. If I can help, I'll say so plainly — and if someone else is a better fit, I'll say that too.</p>
-      <div class="contact-actions">
-        <a class="btn btn-signal" href="mailto:ritika.raje03@gmail.com?subject=Consulting%20enquiry">Email me</a>
-        <a class="btn btn-outline" href="https://www.linkedin.com/in/ritika-raje/" id="linkedin-link" target="_blank" rel="noopener">Connect on LinkedIn</a>
-      </div>
-    </div>
-  </section>
+      const revealElements = document.querySelectorAll('.reveal');
 
-</main>
+      if (prefersReducedMotion || !('IntersectionObserver' in window)) {
+        revealElements.forEach((el) => el.classList.add('in'));
+      } else {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('in');
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+        );
 
-<footer class="site">
-  <div class="wrap foot-inner">
-    <span class="fname">Ritika Raje</span>
-    <span class="fmeta">Operational Excellence · AI-Enabled Delivery · London</span>
-  </div>
-</footer>
+        revealElements.forEach((el) => observer.observe(el));
+      }
 
-<script>
-  // Reduced-motion aware scroll reveal
-  (function(){
-    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    var els = document.querySelectorAll('.reveal');
-    if(reduce || !('IntersectionObserver' in window)){
-      els.forEach(function(e){e.classList.add('in');});
-      return;
-    }
-    var io = new IntersectionObserver(function(entries){
-      entries.forEach(function(en){
-        if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); }
-      });
-    },{threshold:0.12});
-    els.forEach(function(e){io.observe(e);});
-  })();
+      // Mobile menu button jumps to contact
+      const menuToggle = document.getElementById('menuToggle');
+      if (menuToggle) {
+        menuToggle.addEventListener('click', () => {
+          const contactSection = document.getElementById('contact');
+          if (contactSection) {
+            contactSection.scrollIntoView({ behavior: 'smooth' });
+          }
+        });
+      }
 
-  // Mobile menu button jumps to contact
-  document.getElementById('menuToggle').addEventListener('click',function(){
-    document.getElementById('contact').scrollIntoView();
-  });
+      // Header shadow on scroll
+      const header = document.getElementById('site-header');
+      if (header && !prefersReducedMotion) {
+        let scrollTimeout;
+        window.addEventListener(
+          'scroll',
+          () => {
+            if (scrollTimeout) {
+              window.cancelAnimationFrame(scrollTimeout);
+            }
+            scrollTimeout = window.requestAnimationFrame(() => {
+              if (window.scrollY > 10) {
+                header.classList.add('scrolled');
+              } else {
+                header.classList.remove('scrolled');
+              }
+            });
+          },
+          { passive: true }
+        );
+      }
 
-  // Guard the LinkedIn link until a real URL is set
-  document.getElementById('linkedin-link').addEventListener('click',function(e){
-    if(this.getAttribute('href')==='#'){
-      e.preventDefault();
-      alert('Add your LinkedIn URL to this button before publishing.');
-    }
-  });
-</script>
-
+      // Guard the LinkedIn link
+      const linkedInLink = document.getElementById('linkedin-link');
+      if (linkedInLink) {
+        linkedInLink.addEventListener('click', (e) => {
+          if (linkedInLink.getAttribute('href') === '#') {
+            e.preventDefault();
+            console.warn(
+              'Add your LinkedIn URL to this button before publishing.'
+            );
+          }
+        });
+      }
+    })();
+  </script>
 </body>
 </html>
